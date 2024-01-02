@@ -1,0 +1,32 @@
+# kullanıcıdan n pozitif tamsayı değerini (n<10) ve n tane tamsayıyı alıp B isimli diziye koyan bir program yazınız. 
+# (Bu program daha sonra kullanıcıdan bir amsayı değeri isteyecek, ve bu tamsayı değeri dizi içinde mevcut ise çıkaracak ve B dizisinin yeni durumunu ekranda gösterecektir.)
+# 
+# Örnek çıktı: n giriniz: 5
+# 5 adet tamsayı giriniz: 10 3 15 7 0
+# Bir tamsayı giriniz: 15
+# Yeni dizi: 10 3 7 0
+#
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int n, i, B[10],j, num;
+	printf("n degerini giriniz: ");
+	scanf("%d",&n);
+	printf("%d adet tamsayi giriniz: ", n);
+	for(i=0; i<n;i++)
+		scanf("%d", &B[i]);
+	printf("Bir tamsayi giriniz: ");
+	scanf("%d", &num);
+	for(i=0; i<n; ++i){
+		if(B[i] == num){
+			for(j=i;j<n-1;j++)
+				B[j]= B[j+1];
+		}	
+	}
+	printf("Yeni dizi: ");
+	for(i=0; i<n-1;i++)
+		printf("%d ",B[i]);
+	return 0;
+}
