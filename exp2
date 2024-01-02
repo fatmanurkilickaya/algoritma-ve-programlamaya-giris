@@ -1,0 +1,31 @@
+#Bir uçak yolculuğunun kaç saniye sürdüğünü okuyup bu değeri hesapla() fonksiyonuna yollayınız.
+#Hesapla() fonksiyonunda parametre olarak gelen saniye değerini saat, dakika ve saniyeye dönüştürüp bu değerleri kaynak parametresi olarak geri yollayınız. 
+#Main() fonksiyonunda ise bulunan bu değerleri ekranda gösteriniz.
+#Örnek çıktı: 
+#Yolculuğun kaç saniye sürdüğünü giriniz: 4212
+#Yolculuk 1 saat 10 dakika 12 saniye sürer.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void hesapla(int, int*, int*, int*);
+
+int main() {
+	int toplam, saat, dakika, saniye;
+	printf("Yolculugun kac saniye surdugunu giriniz: ");
+	scanf("%d", &toplam);
+	if(toplam <0) printf("Yanlis deger girdiniz: ");
+	else{
+		hesapla(toplam, &saat, &dakika, &saniye);
+		printf("Yolculuk %d saat %d dakika %d saniye surer. ", saat, dakika, saniye);
+	}
+	return 0;
+}
+
+void hesapla(int t, int *st, int *dk, int *sn){
+	*st = t/3600;        /*saat hesaplaması */
+	t-= *st * 3600;
+	*dk = t/60;          /*dakika hesaplaması */
+	*sn = t-*dk * 60;    /*saniye hesaplaması */
+	
+}
