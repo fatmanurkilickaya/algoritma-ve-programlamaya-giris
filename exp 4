@@ -1,0 +1,31 @@
+//Sezar şifreleme yapan programı yazınız.
+//Sezar şifreleme, adını Roma İmparatoru Julius Sezar'dan alan basit bir şifreleme yöntemidir.
+//Bu yöntemde, bir metin belgesi içindeki her harfi belirli bir sabit sayıda (anahtar olarak adlandırılır) kaydırarak şifreleme yapılır. Şifreleme ve şifre çözme işlemleri aynı anahtarla gerçekleştirilir.
+//Örneğin, bir metni 3 karakter kaydırmak için Sezar şifrelemesi kullanılıyorsa:
+
+//A -> D
+//B -> E
+//C -> F
+//...
+//X -> A
+//Y -> B
+//Z -> C
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char k[50];
+    int x;
+
+    printf("kelimeyi giriniz:");
+    scanf("%s", k);
+    printf("oteleme miktarini giriniz:");
+    scanf("%d", &x);
+
+    for (int i = 0; i < strlen(k); i++) {
+        printf("%c", k[i] + x);
+    }
+
+    return 0;
+}
