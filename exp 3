@@ -1,0 +1,27 @@
+//klavyeden girilen bir kelimenin harflerini buyuterek iki harf acik iki harf yildizla kapali yazan program
+//örnek çıktı: cümle giriniz:fatmanur
+               karakter uzunlugu:8
+               FA**AN**
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char k[50] = "";
+    printf("cümle giriniz:");
+
+    scanf("%s", k);
+    printf("karakter uzunlugu:%lu\n", strlen(k)); 
+    for (int i = 0; i < strlen(k); i++) {
+        if (i % 4 < 2) {
+            if (k[i] >= 'a' && k[i] <= 'z') {
+                k[i] = k[i] - 32;
+            }
+            printf("%c", k[i]);
+        } else {
+            printf("*");
+        }
+    }
+
+    return 0;
+}
